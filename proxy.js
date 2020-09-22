@@ -15,7 +15,7 @@ app.get('*', (req, res) => {
     try {
         var reqUrl = req.url.substr(1);
 
-        if (reqUrl.startsWith("https://")) {
+        if (reqUrl.startsWith("https://") | reqUrl.startsWith("http://")) {
 
             console.log('==> Making req for' + reqUrl + '\n');
 
@@ -40,6 +40,7 @@ app.get('*', (req, res) => {
                     serverResponse.pause();
 
                     serverResponse.headers['access-control-allow-origin'] = '*';
+                    serverResponse.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36';
 
 
                     switch (serverResponse.statusCode) {
