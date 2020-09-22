@@ -1,0 +1,13 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js"
+  },
+  "keywords": [
+    "PROXY"
+  ],
+  "author": "Kirtan Patel",
+  "license": "ISC"
+}

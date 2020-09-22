@@ -1,0 +1,16 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+
+stages:
+  - package
+
+docker-build:
+  stage: package
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t registry.gitlab.com/kirtanpt/proxy .
+    - docker push registry.gitlab.com/kirtanpt/proxy
