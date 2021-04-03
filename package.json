@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "proxy.js",
   "scripts": {
-    "start": "node proxy.js"
+    "start": "nodemon proxy.js"
   },
   "dependencies": {
+    "nodemon": "^2.0.4",
     "express": "^4.17.1"
   },
   "keywords": [
